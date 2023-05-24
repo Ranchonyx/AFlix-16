@@ -1,0 +1,17 @@
+{
+    "size": "0xFFFF",
+    "sections": {
+        "program": {
+            "start": "0x0000",
+            "end": "0xFE01"
+        },
+        "isr": {
+            "start": "0xFE02",
+            "end": "0xFF00"
+        },
+        "bootstrap": {
+            "start": "0xFF01",
+            "end": "0xFFFF"
+        }
+    }
+}
