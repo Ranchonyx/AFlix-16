@@ -35,7 +35,7 @@ exports.createRomLayout = (linkFile, nodeList) => {
         }
         if(section === "bootstrap") {
             //Append tail jump to program
-            let asm = Buffer.from(`bd${sections.get("program")[0].sectionStart.toString(16).padStart(4, 0)}`, "hex");
+            let asm = Buffer.from(`bd${(sections.get("program")[0].sectionStart-4).toString(16).padStart(4, 0)}`, "hex");
             console.log(`Inserting ${asm.toString("hex")} @ $${(ctr / 3).toString(16).padStart(4, 0)}`);
             buffer.set(asm, ctr + 3);
         }

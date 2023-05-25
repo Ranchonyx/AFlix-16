@@ -1,65 +1,23 @@
 [
   {
     "start": 1,
-    "stop": 9,
-    "name": "functions",
-    "content": [
-      ".function laxff:",
-      "LAX $caca",
-      "JRA",
-      ".endfunction",
-      ".function lbxff:",
-      "LBX $baca",
-      "JRA",
-      ".endfunction"
-    ]
-  },
-  {
-    "start": 11,
-    "stop": 12,
+    "stop": 2,
     "name": "bootstrap",
     "content": [
       "SRST"
     ]
   },
   {
-    "start": 14,
-    "stop": 48,
+    "start": 4,
+    "stop": 11,
     "name": "program",
     "content": [
-      "PUSH A",
+      "LAX $00ff",
+      "LBX $0001",
+      "SBX #$0000",
       "NOP",
-      "PUSH IP",
-      "NOP",
-      "LAX $000e",
-      "SAX #$0000",
-      "POP A",
-      "DESP",
-      "ADD #$0000",
-      "PUSH A",
-      "NOP",
-      "POP RA",
-      "DESP",
-      "POP A",
-      "DESP",
-      "JMP \"laxff\"",
-      "HLT",
-      "PUSH A",
-      "NOP",
-      "PUSH IP",
-      "NOP",
-      "LAX $000e",
-      "SAX #$0000",
-      "POP A",
-      "DESP",
-      "ADD #$0000",
-      "PUSH A",
-      "NOP",
-      "POP RA",
-      "DESP",
-      "POP A",
-      "DESP",
-      "JMP \"lbxff\"",
+      "SUB #$0000",
+      "JNZ $0003",
       "HLT"
     ]
   }
