@@ -1,12 +1,22 @@
+.section functions:
+    .function laxff:
+        LAX $caca
+        RET
+    .endfunction
+
+    .function lbxff:
+        LBX $baca
+        RET
+    .endfunction
+.endsection
+
 .section bootstrap:
     SRST
-    PHI $0000
-    PLR IP
 .endsection
 
 .section program:
-    LAX $00ff
-    
-
-
+    JSR "laxff"
+    HLT
+    JSR "lbxff"
+    HLT
 .endsection

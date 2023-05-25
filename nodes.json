@@ -1,0 +1,666 @@
+[
+  {
+    "opcode": "LAX",
+    "type": "UNARY",
+    "section": "functions",
+    "id": 0,
+    "sectionStart": 1,
+    "sectionStop": 9,
+    "operands": {
+      "HIGH": {
+        "value": "$ca",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "$ca",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "JRA",
+    "type": "NONE",
+    "section": "functions",
+    "id": 1,
+    "sectionStart": 1,
+    "sectionStop": 9
+  },
+  {
+    "opcode": "LBX",
+    "type": "UNARY",
+    "section": "functions",
+    "id": 2,
+    "sectionStart": 1,
+    "sectionStop": 9,
+    "operands": {
+      "HIGH": {
+        "value": "$ba",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "$ca",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "JRA",
+    "type": "NONE",
+    "section": "functions",
+    "id": 3,
+    "sectionStart": 1,
+    "sectionStop": 9
+  },
+  {
+    "opcode": "SRST",
+    "type": "NONE",
+    "section": "bootstrap",
+    "id": 4,
+    "sectionStart": 11,
+    "sectionStop": 12
+  },
+  {
+    "opcode": "PUSH",
+    "type": "UNARY",
+    "section": "program",
+    "id": 5,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "NOP",
+    "type": "NONE",
+    "section": "program",
+    "id": 6,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "PUSH",
+    "type": "UNARY",
+    "section": "program",
+    "id": 7,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "IP",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "IP",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "NOP",
+    "type": "NONE",
+    "section": "program",
+    "id": 8,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "LAX",
+    "type": "UNARY",
+    "section": "program",
+    "id": 9,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "$00",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "$0e",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "SAX",
+    "type": "UNARY",
+    "section": "program",
+    "id": 10,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "POP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 11,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "DESP",
+    "type": "NONE",
+    "section": "program",
+    "id": 12,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "ADD",
+    "type": "UNARY",
+    "section": "program",
+    "id": 13,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "PUSH",
+    "type": "UNARY",
+    "section": "program",
+    "id": 14,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "NOP",
+    "type": "NONE",
+    "section": "program",
+    "id": 15,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "POP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 16,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "RA",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "RA",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "DESP",
+    "type": "NONE",
+    "section": "program",
+    "id": 17,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "POP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 18,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "DESP",
+    "type": "NONE",
+    "section": "program",
+    "id": 19,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "JMP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 20,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "$00",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "$-1",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "HLT",
+    "type": "NONE",
+    "section": "program",
+    "id": 21,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "PUSH",
+    "type": "UNARY",
+    "section": "program",
+    "id": 22,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "NOP",
+    "type": "NONE",
+    "section": "program",
+    "id": 23,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "PUSH",
+    "type": "UNARY",
+    "section": "program",
+    "id": 24,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "IP",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "IP",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "NOP",
+    "type": "NONE",
+    "section": "program",
+    "id": 25,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "LAX",
+    "type": "UNARY",
+    "section": "program",
+    "id": 26,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "$00",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "$0e",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "SAX",
+    "type": "UNARY",
+    "section": "program",
+    "id": 27,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "POP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 28,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "DESP",
+    "type": "NONE",
+    "section": "program",
+    "id": 29,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "ADD",
+    "type": "UNARY",
+    "section": "program",
+    "id": 30,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "#00",
+        "isImmediate": false,
+        "isAddress": true,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "PUSH",
+    "type": "UNARY",
+    "section": "program",
+    "id": 31,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "NOP",
+    "type": "NONE",
+    "section": "program",
+    "id": 32,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "POP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 33,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "RA",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "RA",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "DESP",
+    "type": "NONE",
+    "section": "program",
+    "id": 34,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "POP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 35,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "A",
+        "isImmediate": false,
+        "isAddress": false,
+        "isRegister": true,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "DESP",
+    "type": "NONE",
+    "section": "program",
+    "id": 36,
+    "sectionStart": 14,
+    "sectionStop": 48
+  },
+  {
+    "opcode": "JMP",
+    "type": "UNARY",
+    "section": "program",
+    "id": 37,
+    "sectionStart": 14,
+    "sectionStop": 48,
+    "operands": {
+      "HIGH": {
+        "value": "$00",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      },
+      "LOW": {
+        "value": "$03",
+        "isImmediate": true,
+        "isAddress": false,
+        "isRegister": false,
+        "isFunctionCall": false
+      }
+    }
+  },
+  {
+    "opcode": "HLT",
+    "type": "NONE",
+    "section": "program",
+    "id": 38,
+    "sectionStart": 14,
+    "sectionStop": 48
+  }
+]

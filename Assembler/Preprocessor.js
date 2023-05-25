@@ -1,22 +1,27 @@
 const pseudoTable = {
     "JSR": (params) => {
         return [
-            "PHR IP",   //Push return address
-            "DESP",     //Decrement sp
-            "PLR RA",   //Save return address in RA
-            "PHR A",    //Push Stack Frage
-            "PHR B",
-            "PHR C",
-            "PHR D",
-            `PHI ${params[0]}`,
-            "PLR IP"    //And we're jumping on next clk cycle
-        ]
+            "PUSH A", //Push A on stack
+            "NOP",
+            "PUSH IP",   //Push IP on stack
+            "NOP",
+            "LAX $000e", //Load $e into A
+            "SAX #$0000", //Store A into #$0000
+            "POP A", // Pop IP into A
+            "DESP",
+            "ADD #$0000", //Add #$0000 to A
+            "PUSH A",
+            "NOP",
+            "POP RA",
+            "DESP",
+            "POP A",
+            "DESP",
+            `JMP ${params[0]}`,
+        ];
     },
     "RET": (params) => {
         return [
-            "PHR RA",
-            "DESP",
-            "PLR IP"
+            "JRA",
         ];
     }
 }

@@ -14,10 +14,10 @@ const cleanedSourceArray = getCleanedSourceArray(sourceText);
 
 const preprocessedArray = preprocess(cleanedSourceArray);
 
-preprocessedArray.forEach((e, i) => console.log(`$${i} -> ${e}`))
-
 const analyzedNodes = analyzeSource(preprocessedArray);
 console.log(`Generated ${analyzedNodes.length} analyzer nodes.`)
+
+writeFileSync("./nodes.json", JSON.stringify(analyzedNodes, null, 2));
 
 const translatedNodes = analyzedNodes
     .map(node => ({ ...node, assembly: Buffer.concat([getInstructionByte(node), translateAndOrderOperands(node)]) }));
@@ -25,7 +25,7 @@ const translatedNodes = analyzedNodes
 console.log(`Parsed ${translatedNodes.length} analyzer nodes.`);
 console.log(`Generating machine code...`);
 
-const romImage = createRomLayout(linkerFile, translatedNodes.reverse());
+const romImage = createRomLayout(linkerFile, translatedNodes);
 console.log(`Rom layout created, 0x${romImage.byteLength.toString(16)} bytes in size.`);
 console.log(`3 bytes / word`);
 console.log(`NOP-Padded to 0x${romImage.byteLength / 3} words.`);

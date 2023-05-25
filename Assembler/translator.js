@@ -1,3 +1,4 @@
+const { exit } = require("process");
 const { instructions, regs } = require("./constants");
 
 function hexToBin(pHex) {
@@ -8,36 +9,44 @@ function hexToBin(pHex) {
     return "0b" + res;
 }
 /**
- * @param {{opcode: string, type: string, section: string, operands: {HIGH: {value: string, isImmediate: boolean, isAddress: boolean, isRegister: boolean}, LOW: {value: string, isImmediate: boolean, isAddress: boolean, isRegister: boolean}}}} node
+ * @param {{value: string, isImmediate: boolean, isAddress: boolean, isRegister: boolean, isFunctionCall: boolean}} operand 
  */
 
 exports.getInstructionByte = (node) => {
     let rv = null;
-
-    if (node.operands?.HIGH?.isAddress || node.operands?.LOW?.isAddress) {
-        rv = instructions.ramUnion[node.opcode].byteVal;
-    } else if (node.operands?.HIGH?.isImmediate || node.operands?.LOW?.isImmediate) {
-        rv = instructions.immediateUnion[node.opcode].byteVal;
-    } else {
-        rv = instructions.ramUnion[node.opcode].byteVal || instructions.immediateUnion[node.opcode].byteVal;
+    try {
+        if (node.operands?.HIGH?.isAddress || node.operands?.LOW?.isAddress) {
+            rv = instructions.ramUnion[node.opcode].byteVal;
+        } else if (node.operands?.HIGH?.isImmediate || node.operands?.LOW?.isImmediate) {
+            rv = instructions.immediateUnion[node.opcode].byteVal;
+        } else {
+            rv = instructions.ramUnion[node.opcode].byteVal || instructions.immediateUnion[node.opcode].byteVal;
+        }    
+    } catch(ex) {
+        console.log(`Error processing node:`);
+        console.log(node.opcode);
     }
-
-    return Buffer.from(["0x"+rv], "hex");
+    return Buffer.from(["0x" + rv], "hex");
 }
 /**
  * 
- * @param {{value: string, isImmediate: boolean, isAddress: boolean, isRegister: boolean}} operand 
+ * @param {{value: string, isImmediate: boolean, isAddress: boolean, isRegister: boolean, isFunctionCall: boolean}} operand 
  */
 function trop(operand) {
     if (operand == undefined) {
-        return "0b00000000";
-    }
+        rv = "0b00000000";
+    } else
     if (operand.isAddress || operand.isImmediate) {
-        return hexToBin(operand.value);
-    }
+        rv = hexToBin(operand.value);
+    } else
     if (operand.isRegister) {
-        return "0b"+regs[operand.value];
+        rv = "0b" + regs[operand.value];
+    } else {
+        rv = "0b00000000";
     }
+
+    console.log(operand?.value, rv);
+    return rv;
 }
 
 /**

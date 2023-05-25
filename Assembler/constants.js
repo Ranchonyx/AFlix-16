@@ -68,8 +68,8 @@ const aluOpTab = {
 const skOpTab = {
     "SRST": { byteVal: "80", significand: "NONE" },
     "PHI": { byteVal: "81", significand: "BOTH" },
-    "PHR": { byteVal: "82", significand: "LOW" },
-    "PLR": { byteVal: "83", significand: "LOW" },
+    "PUSH": { byteVal: "82", significand: "LOW" },
+    "POP": { byteVal: "83", significand: "LOW" },
     "RFI": { byteVal: "84", significand: "NONE" }, //This might change
     "LDSP": { byteVal: "85", significand: "LOW" },
     "RDSP": { byteVal: "86", significand: "LOW" },
@@ -82,6 +82,7 @@ const miscTab = {
     "JMP": {byteVal: "bd", significand: "BOTH"},
     "JZ": {byteVal: "bc", significand: "BOTH"},
     "JNZ": {byteVal: "bb", significand: "BOTH"},
+    "JRA": {byteVal: "ba", significand: "BOTH" }
 }
 
 exports.regs = {
